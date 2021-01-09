@@ -1,0 +1,64 @@
+@import 'variables';
+
+.categories {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      background-color: #f9f9f9;
+      padding: 13px 30px;
+      border-radius: 30px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      @include noselect();
+
+      &:hover {
+        background-color: darken(#f9f9f9, 2%);
+      }
+
+      &:active {
+        background-color: darken(#f9f9f9, 5%);
+      }
+
+      &.active {
+        background-color: #282828;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories {
+
+    width: 100%;
+    box-sizing: border-box;
+
+    ul {
+      width: 100%;
+      overflow-x: auto;
+      background: rgb(255, 255, 255);
+      display: flex;
+      flex-wrap: nowrap;
+      -webkit-box-align: center;
+      align-items: center;
+      top: 0px;
+      z-index: 99;
+      will-change: box-shadow;
+      transition: box-shadow 150ms ease 0s;
+      user-select: none;
+
+      li {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
+
+  }
+}
