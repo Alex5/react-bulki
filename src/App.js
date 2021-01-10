@@ -12,7 +12,6 @@ const App = () => {
                         <img width="38" src={pizzaLogo} alt="Pizza logo"/>
                         <div>
                             <h1>React Pizza</h1>
-                            <p>самая вкусная пицца во вселенной</p>
                         </div>
                     </div>
                     <div className="header__cart">
