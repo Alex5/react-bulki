@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 
-import pizzaLogo from './assets/img/pizza-logo.svg'
+import jojoLogo from './assets/img/jojo-logo.png'
 
 const App = () => {
     return (
@@ -9,9 +9,9 @@ const App = () => {
             <div className="header">
                 <div className="container">
                     <div className="header__logo">
-                        <img width="38" src={pizzaLogo} alt="Pizza logo"/>
+                        <img width="100" src={jojoLogo} alt="Pizza logo"/>
                         <div>
-                            <h1>React Pizza</h1>
+                            <h1>JOJO Pizza</h1>
                         </div>
                     </div>
                     <div className="header__cart">
