@@ -11,5 +11,4 @@ const Button = ({outline, className, children}) => {
     );
 }
 
-
 export default Button;

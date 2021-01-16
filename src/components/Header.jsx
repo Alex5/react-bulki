@@ -1,4 +1,4 @@
-import jojoLogo from "../assets/img/jojo-logo.png";
+import bulkiLogo from "../assets/img/bulki-logo.svg";
 import React from "react";
 import Button from "./Button";
 
@@ -8,9 +8,10 @@ const Header = () => {
         <div className="header">
             <div className="container">
                 <div className="header__logo">
-                    <img width="100" src={jojoLogo} alt="Pizza logo"/>
+                    <img width="50" src={bulkiLogo} alt="Pizza logo"/>
                     <div>
-                        <h1>JOJO Pizza</h1>
+                        <h1>булки</h1>
+                        <p>самые вкусные булки на диком западе.</p>
                     </div>
                 </div>
                 <div className="header__cart">
