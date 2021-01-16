@@ -26,7 +26,7 @@ const App = () => {
                         />
                        <SortPopup />
                     </div>
-                    <h2 className="content__title">Все пиццы</h2>
+                    <h2 className="content__title">Вся выпечка</h2>
                     <div className="content__items">
                         <div className="pizza-block">
                             <img
@@ -34,17 +34,17 @@ const App = () => {
                                 src={cupCakePhoto}
                                 alt="Pizza"
                             />
-                            <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                            <h4 className="pizza-block__title">Капкейки</h4>
                             <div className="pizza-block__selector">
                                 <ul>
-                                    <li className="active">тонкое</li>
-                                    <li>традиционное</li>
+                                    <li className="active">Молочные</li>
+                                    <li>Шоколадные</li>
                                 </ul>
                                 <ul>
-                                    <li className="active">26 см.
+                                    <li className="active">4 шт.
                                     </li>
-                                    <li>30 см.</li>
-                                    <li>40 см.</li>
+                                    <li>8 шт.</li>
+                                    <li>12 шт.</li>
                                 </ul>
                             </div>
                             <div className="pizza-block__bottom">
