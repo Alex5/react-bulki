@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import pizzaCover from './../assets/img/image.png'
+import Modal from "@material-ui/core/Modal";
+import Fade from "@material-ui/core/Fade";
 
 const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
 
@@ -66,10 +68,7 @@ const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
                     <i>2</i>
                 </div>
             </div>
-
         </div>
-
-
     );
 }
 
