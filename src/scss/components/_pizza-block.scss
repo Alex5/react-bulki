@@ -1,5 +1,9 @@
 @import "./../variables";
 
+#zagluska {
+    filter: grayscale(1);
+}
+
 .pizza-block {
   width: fit-content;
   text-align: center;

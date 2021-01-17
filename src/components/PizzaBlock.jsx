@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
+import pizzaCover from './../assets/img/image.png'
 
 const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
 
@@ -65,6 +66,7 @@ const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
                     <i>2</i>
                 </div>
             </div>
+
         </div>
 
 
@@ -72,7 +74,19 @@ const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
 }
 
 PizzaBlock.propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    types: PropTypes.arrayOf(PropTypes.number).isRequired,
+    sizes: PropTypes.arrayOf(PropTypes.number).isRequired
+}
+
+PizzaBlock.defaultProps = {
+    name: "-----------",
+    types: [],
+    sizes: [],
+    price: 0,
+    imageUrl: pizzaCover
 }
 
 export default PizzaBlock;

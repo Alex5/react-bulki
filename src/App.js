@@ -11,17 +11,28 @@ import axios from "axios";
 const App = () => {
 
     const [pizzas, setPizzas] = useState([])
+    const [isLoading, setIsLoading] = useState(null)
 
     useEffect(() => {
-        axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235')
-            .then((res) => {setPizzas(res.data.pizzas);})
+        setIsLoading(true)
+        axios.get('http://localhost:3000/db.json')
+            .then((res) => {
+                setPizzas(res.data.pizzas)
+
+                if (!res) {
+                    axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1').then(res.data.pizzas)
+                }
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }, [])
 
     return (
         <Container>
             <Header/>
             <Route exact path={"/"} render={() => (
-                <Home items={pizzas}/>)}/>
+                <Home isLoading={isLoading} items={pizzas}/>)}/>
             <Route exact path={"/cart"} component={Cart}/>
         </Container>
     );
