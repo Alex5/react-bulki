@@ -20,12 +20,13 @@ const App = () => {
                 setPizzas(res.data.pizzas)
 
                 if (!res) {
-                    axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1').then(res.data.pizzas)
+                    axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1').then((res) => res.data.pizzas)
                 }
             })
             .finally(() => {
                 setIsLoading(false)
             })
+        axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1').then((res) => res.data.pizzas)
     }, [])
 
     return (
