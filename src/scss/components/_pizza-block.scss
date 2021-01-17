@@ -1,9 +1,5 @@
 @import "./../variables";
 
-#zagluska {
-    filter: grayscale(1);
-}
-
 .pizza-block {
   width: fit-content;
   text-align: center;
@@ -89,6 +85,11 @@
 @media screen and (max-width: 768px) {
   .pizza-block {
     width: 100%;
+    padding: 0;
+
+    &:hover {
+      background: none;
+    }
 
     &:not(:nth-of-type(4n)) {
       margin-right: 0;
