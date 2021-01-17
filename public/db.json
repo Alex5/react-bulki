@@ -1,0 +1,104 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "https://images.av.ru/av.ru/product/h34/h27/8991200018462.jpg",
+      "name": "Кукис блэк два шоколада",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://images.av.ru/av.ru/product/h44/ha7/9181687382046.jpg",
+      "name": "Талер Малиново-творожный",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 245,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://images.av.ru/av.ru/product/hff/h11/8983615438878.jpg",
+      "name": "Пирожок карельский с морковью",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 295,
+      "category": 1,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://images.av.ru/av.ru/product/h52/h49/8983616258078.jpg",
+      "name": "Выпечка \"Брецель с солью\"",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 275,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://images.av.ru/av.ru/product/hba/h71/8983529848862.jpg",
+      "name": "Круассаны",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 415,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://images.av.ru/av.ru/product/h10/h8d/8980797718558.jpg",
+      "name": "Миндальное печенье",
+      "types": [0],
+      "sizes": [30, 40],
+      "price": 580,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://images.av.ru/av.ru/product/h47/h41/8991199952926.jpg",
+      "name": "Кукис вайт с орехами и шоколадом",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 675,
+      "category": 1,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://images.av.ru/av.ru/product/h1c/h22/8983616684062.jpg",
+      "name": "Штрудель яблочный от шеф-пекаря",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 450,
+      "category": 4,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://images.av.ru/av.ru/product/h42/h96/8983615832094.jpg",
+      "name": "Сочник с творогом от шеф-пекаря",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://images.av.ru/av.ru/product/hd9/hca/9174863347742.jpg",
+      "name": "Вафли \"Льежские\" с шоколадом 🌱",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 285,
+      "category": 5,
+      "rating": 7
+    }
+  ]
+}
