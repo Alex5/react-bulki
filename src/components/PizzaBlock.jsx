@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
 
@@ -68,6 +69,10 @@ const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
 
 
     );
+}
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string.isRequired
 }
 
 export default PizzaBlock;

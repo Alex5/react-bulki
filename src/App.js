@@ -7,12 +7,13 @@ import Home from "./Pages/home";
 import Cart from "./Pages/Cart";
 import axios from "axios";
 
+
 const App = () => {
 
     const [pizzas, setPizzas] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/db.json')
+        axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235')
             .then((res) => {setPizzas(res.data.pizzas);})
     }, [])
 
