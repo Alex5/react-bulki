@@ -1,45 +1,43 @@
-import React, {useEffect, useState} from "react";
-import Container from "@material-ui/core/Container";
+import React from "react";
+import {Route} from "react-router-dom";
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {setPizzas} from "./redux/reducers/pizzas";
 
 import {Header} from './components'
-import {Route} from "react-router-dom";
-import Home from "./Pages/home";
-import Cart from "./Pages/Cart";
-import axios from "axios";
+import {Home, Cart} from './Pages'
 
-
+import Container from "@material-ui/core/Container";
+import {getPizzas} from "./api/Api";
 
 const App = () => {
 
-    const [pizzas, setPizzas] = useState([])
-    const [isLoading, setIsLoading] = useState(null)
+    const dispatch = useDispatch();
 
-    useEffect(() => {
-        setIsLoading(true)
+    React.useEffect(() => {
         axios
             .get('http://localhost:3000/db.json')
-            .then((res) => {
-                setPizzas(res.data.pizzas)
+            .then(({data}) => {
+                dispatch(setPizzas(data.pizzas))
             })
             .finally(() => {
-                setIsLoading(false)
+
             })
-        axios
-            .get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1')
-            .then((res) =>  setPizzas(res.data.pizzas))
-            .finally(() => {
-                setIsLoading(false)
-            })
-    }, [])
+        getPizzas().then(({data}) => dispatch(setPizzas(data.pizzas)))
+    }, [dispatch])
 
     return (
         <Container>
             <Header/>
-            <Route exact path={"/"} render={() => (
-                <Home isLoading={isLoading} items={pizzas}/>)}/>
+            <Route exact path={"/"} component={Home}/>
             <Route exact path={"/cart"} component={Cart}/>
         </Container>
     );
 }
+
+// const mapStateToProps = (state) => ({
+//     items: state.pizzasData.items,
+//     isLoading: state.pizzasData.isLoaded
+// })
 
 export default App;

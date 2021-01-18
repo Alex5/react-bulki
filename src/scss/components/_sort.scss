@@ -13,18 +13,19 @@
     b {
       white-space: nowrap;
       margin-right: 8px;
+      font-weight: 500;
     }
 
     span {
       color: $orange;
-      border-bottom: 1px dashed $orange;
+      border-bottom: 1px solid $orange;
       cursor: pointer;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none;   /* Chrome/Safari/Opera */
-      -moz-user-select: none;      /* Firefox */
-      -ms-user-select: none;       /* Internet Explorer/Edge */
-      user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-weight: 700;
     }
   }
 

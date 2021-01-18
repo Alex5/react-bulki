@@ -1,9 +1,12 @@
 import React from 'react';
 import {Categories, SortPopup} from "../components";
 import PizzaBlock from "../components/PizzaBlock";
-import ReactLoading from 'react-loading';
+import {useSelector} from "react-redux";
 
-const Home = ({items, isLoading}) => {
+const Home = () => {
+
+    const items = useSelector(({pizzasData}) => pizzasData.items)
+
     const categoriesItems = [
         "пончики",
         "маффины",
@@ -23,18 +26,17 @@ const Home = ({items, isLoading}) => {
         <div className="container">
             <div className="content__top">
                 <Categories
+                    onClickItem={(name) => console.log(name)}
                     items={categoriesItems}
                 />
                 <SortPopup items={sortItems}/>
             </div>
             <h2 className="content__title">Вся выпечка</h2>
-                {isLoading
-                    ? <ReactLoading type={"spin"} color="#F5C88B" height={50} width={50}/>
-                    : <div className="content__items">
-                        {items && items.map((item) => (
-                            <PizzaBlock key={item.id} {...item}/>
-                        ))}
-                    </div>}
+            <div className="content__items">
+                {items && items.map((item) => (
+                    <PizzaBlock key={item.id} {...item}/>
+                ))}
+            </div>
         </div>
     );
 }

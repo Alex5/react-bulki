@@ -1,16 +1,10 @@
-import { createStore } from 'redux'
+import {applyMiddleware, compose, createStore} from 'redux'
+import rootReducer from "./reducers";
 
-const store = createStore(counterReducer)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-function counterReducer(state = { value: 0 }, action) {
-    switch (action.type) {
-        case 'counter/incremented':
-            return { value: state.value + 1 }
-        case 'counter/decremented':
-            return { value: state.value - 1 }
-        default:
-            return state
-    }
-}
+let store = createStore(rootReducer, composeEnhancers(
+        applyMiddleware()
+    ));
 
 export default store;
