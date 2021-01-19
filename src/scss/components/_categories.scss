@@ -9,12 +9,14 @@
 
     li {
       background-color: #f9f9f9;
-      padding: 10px 20px;
+      padding: 7px 17px;
       border-radius: 30px;
       font-weight: 500;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
+      margin-bottom: 10px;
+      margin-right: 10px;
 
       &:hover {
         background-color: darken(#f9f9f9, 2%);
@@ -34,12 +36,22 @@
 
 @media screen and (max-width: 768px) {
   .categories {
+    height: 56px;
     width: 100%;
-    box-sizing: border-box;
+    overflow-x: auto;
+    background: rgb(255, 255, 255);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    top: 0px;
+    z-index: 99;
+    will-change: box-shadow;
+    transition: box-shadow 150ms ease 0s;
+    user-select: none;
 
     ul {
       width: 100%;
-      overflow-x: auto;
+      overflow-x: overlay;
       background: rgb(255, 255, 255);
       display: flex;
       flex-wrap: nowrap;
@@ -53,11 +65,16 @@
 
       li {
         flex: 0 0 auto;
+        padding: 7px 15px;
         margin-right: 10px;
         margin-bottom: 10px;
         margin-top: 10px;
       }
     }
+  }
 
+  .categories.fixed {
+    position: fixed;
   }
 }
+

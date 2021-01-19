@@ -6,8 +6,6 @@ import {setPizzas} from "./redux/reducers/pizzas";
 
 import {Header} from './components'
 import {Home, Cart} from './Pages'
-
-import Container from "@material-ui/core/Container";
 import {getPizzas} from "./api/Api";
 
 const App = () => {
@@ -27,11 +25,11 @@ const App = () => {
     }, [dispatch])
 
     return (
-        <Container>
+        <div className="container">
             <Header/>
             <Route exact path={"/"} component={Home}/>
             <Route exact path={"/cart"} component={Cart}/>
-        </Container>
+        </div>
     );
 }
 

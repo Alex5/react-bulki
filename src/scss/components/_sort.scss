@@ -22,12 +22,8 @@
       color: $orange;
       border-bottom: 1px solid $orange;
       cursor: pointer;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
       font-weight: 700;
+      @include noselect();
     }
   }
 
@@ -65,6 +61,6 @@
 
 @media screen and (max-width: 700px) {
   .sort {
-    align-self: flex-end;
+   display: none;
   }
 }

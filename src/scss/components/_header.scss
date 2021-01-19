@@ -30,16 +30,41 @@
   }
 }
 
-.headerLogo {
-  display: none;
-
+.scrollLogo {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  opacity: 0;
+  margin-right: -32px;
+  transform: translateX(-48px);
+  will-change: margin-right, transform;
+  transition-property: margin-right, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
 }
 
-.headerLogoOnScroll {
-  display: flex;
-  position: sticky;
-  left: 0;
-  margin-right: 15px;
-  background: white;
-  transition: ease-in-out 0.7s;
+.scrollLogo.active {
+  opacity: 1;
+  margin-right: 10px;
+  transform: translateX(0px);
 }
+
+@media screen and (max-width: $phone) {
+  .scrollLogo {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    margin-right: -32px;
+    transform: translateX(-48px);
+    will-change: margin-right, transform;
+    transition-property: margin-right, transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  .scrollLogo.active {
+    margin-right: 10px;
+    transform: translateX(0px);
+  }
+}
+
