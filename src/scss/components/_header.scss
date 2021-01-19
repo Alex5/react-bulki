@@ -29,3 +29,17 @@
     }
   }
 }
+
+.headerLogo {
+  display: none;
+
+}
+
+.headerLogoOnScroll {
+  display: flex;
+  position: sticky;
+  left: 0;
+  margin-right: 15px;
+  background: white;
+  transition: ease-in-out 0.7s;
+}
