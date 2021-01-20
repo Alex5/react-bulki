@@ -10,9 +10,8 @@ import {Home, Cart} from './Pages'
 const App = () => {
     const dispatch = useDispatch();
     React.useEffect(() => {
-        // pizzaApi.getPizzas().then(({data}) => {dispatch(setPizzas(data))})
-        // getPizzasServer().then(({data}) => dispatch(setPizzas(data)))
         dispatch(getPizzasThunk())
+        // getPizzasServer().then(({data}) => dispatch(setPizzas(data)))
     }, [dispatch])
 
     return (

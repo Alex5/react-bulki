@@ -6,8 +6,17 @@ const instance = axios.create({
 
 export const pizzaApi = {
     getPizzas() {
-        return instance.get(`pizzas`);
+        try {
+            return instance.get(`pizzas`).catch(err => {
+                if (err.response.status === 404) {
+                   return axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/2');
+                }
+            });
+        } catch (err) {
+            console.log(err)
+        }
     }
+
 }
 
 export const sortApi = {
@@ -16,11 +25,3 @@ export const sortApi = {
     }
 }
 
-export async function getPizzasServer() {
-    try {
-        const response = await axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/1');
-        return response
-    } catch (error) {
-        console.error(error);
-    }
-}
