@@ -25,7 +25,7 @@
     }
 
     p {
-      color: #7b7b7b;
+      color: #000000;
     }
   }
 }
@@ -47,24 +47,5 @@
   opacity: 1;
   margin-right: 10px;
   transform: translateX(0px);
-}
-
-@media screen and (max-width: $phone) {
-  .scrollLogo {
-    width: 32px;
-    height: 32px;
-    flex: 0 0 auto;
-    margin-right: -32px;
-    transform: translateX(-48px);
-    will-change: margin-right, transform;
-    transition-property: margin-right, transform;
-    transition-duration: 150ms;
-    transition-timing-function: ease-out;
-  }
-
-  .scrollLogo.active {
-    margin-right: 10px;
-    transform: translateX(0px);
-  }
 }
 

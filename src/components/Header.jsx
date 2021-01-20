@@ -13,7 +13,7 @@ const Header = () => {
                         <img width="50" src={bulkiLogo} alt="Pizza logo"/>
                         <div>
                             <h1>булки</h1>
-                            <p>Крутые булки.</p>
+                            <p>Сеть булочных №1 в России.</p>
                         </div>
                     </div>
                 </Link>

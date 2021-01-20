@@ -1,3 +1,6 @@
+import {pizzaApi, sortApi} from "../../api/Api";
+import {setPizzas} from "./pizzas";
+
 const SET_SORT_BY = "SET-SORT-BY"
 const SET_CATEGORY = "SET-CATEGORY"
 
@@ -24,6 +27,11 @@ const filters = (state = initialState, action) => {
 }
 
 export const setSortBy = (name) => ({type: SET_SORT_BY, payload: name});
-export const setCategories = (catIndex) => ({type: SET_CATEGORY, payload: catIndex});
+export const setCategories = (index) => ({type: SET_CATEGORY, payload: index});
+
+export const setSortThunk = (index) => async (dispatch) => {
+    let response = await sortApi.sortByCategory(index)
+    dispatch(setCategories(response.data));
+}
 
 export default filters;

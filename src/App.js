@@ -1,27 +1,18 @@
 import React from "react";
 import {Route} from "react-router-dom";
-import axios from "axios";
 import {useDispatch} from "react-redux";
-import {setPizzas} from "./redux/reducers/pizzas";
+import {getPizzasThunk, setPizzas} from "./redux/reducers/pizzas";
 
 import {Header} from './components'
 import {Home, Cart} from './Pages'
-import {getPizzas} from "./api/Api";
+// import {pizzaApi, getPizzasServer} from "./api/Api";
 
 const App = () => {
-
     const dispatch = useDispatch();
-
     React.useEffect(() => {
-        axios
-            .get('http://localhost:3000/db.json')
-            .then(({data}) => {
-                dispatch(setPizzas(data.pizzas))
-            })
-            .finally(() => {
-
-            })
-        getPizzas().then(({data}) => dispatch(setPizzas(data.pizzas)))
+        // pizzaApi.getPizzas().then(({data}) => {dispatch(setPizzas(data))})
+        // getPizzasServer().then(({data}) => dispatch(setPizzas(data)))
+        dispatch(getPizzasThunk())
     }, [dispatch])
 
     return (

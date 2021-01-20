@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Categories, SortPopup} from "../components";
 import PizzaBlock from "../components/PizzaBlock";
 import {useSelector, useDispatch} from "react-redux";
-import {setCategories} from "../redux/reducers/filters";
+import {setSortThunk} from "../redux/reducers/filters";
 
 const Home = () => {
 
@@ -24,11 +24,15 @@ const Home = () => {
         "заказам",
     ]
 
+    const onSelectCategory = React.useCallback((index) => {
+        dispatch(setSortThunk(index))
+    },[])
+
     return (
         <div className="container">
             <div className="content__top">
                 <Categories
-                    onClickItem={(name) => dispatch(setCategories(name))}
+                    onClickItem={onSelectCategory}
                     items={categoriesItems}
                 />
                 <SortPopup items={sortItems}/>
