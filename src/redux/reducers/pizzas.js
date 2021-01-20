@@ -1,6 +1,7 @@
 import {pizzaApi} from "../../api/Api";
 
 const SET_PIZZAS = "SET-PIZZAS"
+const SET_LOADED = "SET_LOADED"
 
 let initialState = {
     items: [],
@@ -15,15 +16,22 @@ const pizzas = (state = initialState, action) => {
                 items: action.payload,
                 isLoaded: true
             }
+        case SET_LOADED:
+            return {
+                ...state,
+                isLoaded: action.payload
+            }
         default:
             return state
     }
 }
 
 export const setPizzas = (items) => ({type: SET_PIZZAS, payload: items});
+export const setLoaded = payload => ({type: SET_LOADED, payload})
 
-export const getPizzasThunk = () => async (dispatch) => {
-    let response = await pizzaApi.getPizzas()
+export const fetchPizzas = (sortBy, category) => async (dispatch) => {
+    dispatch(setLoaded(false))
+    let response = await pizzaApi.getPizzas(category, sortBy)
     dispatch(setPizzas(response.data));
 }
 

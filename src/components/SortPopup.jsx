@@ -1,10 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
+import PizzaBlock from "./PizzaBlock/PizzaBlock";
+import PropTypes from "prop-types";
+import Categories from "./Categories";
 
-const SortPopup = React.memo(({items}) => {
+const SortPopup = React.memo(({items, onClickSortType, activeSortType}) => {
+
+    console.log(activeSortType)
 
     const [visiblePopup, setVisiblePopup] = useState(false)
-    const [activeItem, setActiveItem] = useState(0)
-    const activeLabel = items[activeItem]
+    const activeLabel = items.find((obj) => obj.type === activeSortType).name;
+
 
     const toggleVisiblePopup = () => setVisiblePopup(!visiblePopup)
 
@@ -21,7 +26,9 @@ const SortPopup = React.memo(({items}) => {
     }, []);
 
     const onSelectItem = index => {
-        setActiveItem(index)
+        if (onClickSortType) {
+            onClickSortType(index)
+        }
         setVisiblePopup(false)
     }
 
@@ -46,9 +53,11 @@ const SortPopup = React.memo(({items}) => {
             {visiblePopup &&
             <div className="sort__popup">
                 <ul>
-                    {items && items.map((name, index) => (
-                        <li onClick={() => onSelectItem(index)} className={activeItem === index ? 'active' : ''}
-                            key={index}>{name}</li>))}
+                    {items && items.map((obj, index) => (
+                        <li
+                            onClick={() => onSelectItem(obj)}
+                            className={activeSortType === obj.type ? 'active' : ''}
+                            key={index}>{obj.name}</li>))}
                 </ul>
             </div>
             }
@@ -56,5 +65,16 @@ const SortPopup = React.memo(({items}) => {
         </div>
     )
 })
+
+SortPopup.propTypes = {
+    activeSortType: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onCLickSortType: PropTypes.func.isRequired
+}
+
+Categories.defaultProps = {
+    items: []
+}
+
 
 export default SortPopup;

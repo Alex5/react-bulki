@@ -5,8 +5,11 @@ const SET_SORT_BY = "SET-SORT-BY"
 const SET_CATEGORY = "SET-CATEGORY"
 
 let initialState = {
-    categories: "популярности",
-    sortBy: "popular"
+    category: null,
+    sortBy: {
+        type: 'popular',
+        order: 'desc',
+    },
 }
 
 const filters = (state = initialState, action) => {
@@ -19,19 +22,14 @@ const filters = (state = initialState, action) => {
         case SET_CATEGORY:
             return {
                 ...state,
-                sortBy: action.payload
+                category: action.payload
             }
         default:
             return state
     }
 }
 
-export const setSortBy = (name) => ({type: SET_SORT_BY, payload: name});
-export const setCategories = (index) => ({type: SET_CATEGORY, payload: index});
-
-export const setSortThunk = (index) => async (dispatch) => {
-    let response = await sortApi.sortByCategory(index)
-    dispatch(setCategories(response.data));
-}
+export const setSortBy = ({type, order}) => ({type: SET_SORT_BY, payload: {type, order}});
+export const setCategory = (index) => ({type: SET_CATEGORY, payload: index});
 
 export default filters;

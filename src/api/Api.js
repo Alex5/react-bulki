@@ -5,13 +5,17 @@ const instance = axios.create({
 });
 
 export const pizzaApi = {
-    getPizzas() {
+    getPizzas(sortBy, category) {
         try {
-            return instance.get(`pizzas`).catch(err => {
-                if (err.response.status === 404) {
-                   return axios.get('https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/2');
-                }
-            });
+            return instance
+                .get(`pizzas?${
+                    category !== null ? `category=${category}` : ''
+                }&_sort=${sortBy.type}&_order=${sortBy.order}`)
+                .catch(err => {
+                    if (err) {
+                        return axios.get(`https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/2`)
+                    }
+                });
         } catch (err) {
             console.log(err)
         }

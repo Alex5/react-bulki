@@ -1,22 +1,17 @@
 import React, {useState} from "react";
 import bulkiLogo from "../assets/img/bulki-logo.svg";
+import PropTypes from "prop-types";
 
-const Categories = React.memo(({items, onClickItem}) => {
+const Categories = React.memo(({activeCategory, items, onClickCategory}) => {
 
-    const [activeItem, setActiveItem] = useState(null)
     const [showLogo, setShowLogo] = useState(false)
 
-    const onSelectItem = (index) => {
-        setActiveItem(index)
-        onClickItem(index)
-    }
-
     const changeShowLogo = () => {
-       if (window.scrollY > 125) {
-           setShowLogo(true)
-       } else {
-           setShowLogo(false)
-       }
+        if (window.scrollY > 125) {
+            setShowLogo(true)
+        } else {
+            setShowLogo(false)
+        }
     }
 
     window.addEventListener("scroll", changeShowLogo)
@@ -27,13 +22,24 @@ const Categories = React.memo(({items, onClickItem}) => {
                 <div className={showLogo ? "scrollLogo active" : "scrollLogo "}>
                     <img height="100%" src={bulkiLogo} alt="Pizza logo"/>
                 </div>
-                <li className={activeItem === null ? 'active' : ''} onClick={() => onSelectItem(null)}>Все</li>
+                <li className={activeCategory === null ? 'active' : ''} onClick={() => onClickCategory(null)}>Все</li>
                 {items && items.map((name, index) => (
-                    <li onClick={() => onSelectItem(index)} className={activeItem === index ? 'active' : ''}
+                    <li onClick={() => onClickCategory(index)} className={activeCategory === index ? 'active' : ''}
                         key={index}>{name}</li>))}
             </ul>
         </div>
     )
 })
+
+Categories.propTypes = {
+    activeCategory: PropTypes.number.isRequired,
+    items: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClickCategory: PropTypes.func.isRequired
+}
+
+Categories.defaultProps = {
+    activeCategory: null,
+    items: []
+}
 
 export default Categories;

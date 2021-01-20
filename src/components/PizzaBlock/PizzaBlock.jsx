@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import pizzaCover from './../assets/img/image.png'
+import pizzaCover from '../../assets/img/image.png'
 
-const PizzaBlock = ({name, imageUrl, price, sizes, types}) => {
+const PizzaBlock = ({name, imageUrl, price, sizes, types, isLoading}) => {
 
     const availableTypes = ['Молочные', 'Шоколадные']
     const availableSizes = [26, 30, 40]
