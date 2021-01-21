@@ -49,3 +49,12 @@
   transform: translateX(0px);
 }
 
+@media screen and (max-width: $phone) {
+  .header {
+    &__logo p {
+      width: 145px;
+
+    }
+  }
+}
+

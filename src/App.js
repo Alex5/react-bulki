@@ -6,11 +6,11 @@ import {Home, Cart} from './Pages'
 
 const App = () => {
     return (
-        <div className="container">
+        <>
             <Header/>
             <Route exact path={"/"} component={Home}/>
             <Route exact path={"/cart"} component={Cart}/>
-        </div>
+        </>
     );
 }
 

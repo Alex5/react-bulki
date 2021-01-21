@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 
 const instance = axios.create({
     baseURL: 'http://localhost:3001/',
@@ -6,26 +7,12 @@ const instance = axios.create({
 
 export const pizzaApi = {
     getPizzas(sortBy, category) {
-        try {
-            return instance
-                .get(`pizzas?${
-                    category !== null ? `category=${category}` : ''
-                }&_sort=${sortBy.type}&_order=${sortBy.order}`)
-                .catch(err => {
-                    if (err) {
-                        return axios.get(`https://api.jsonbin.io/b/600464f9e31fbc3bdef4d235/2`)
-                    }
-                });
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-}
-
-export const sortApi = {
-    sortByCategory(index) {
-        return instance.get(`pizzas?category=${index}`);
+        return instance
+            .get(`pizzas?${
+                category !== null ? `category=${category}` : ''
+            }&_sort=${sortBy.type}&_order=${sortBy.order}`)
+            .catch(() => {
+                return axios.get(`https://react-bulki-default-rtdb.firebaseio.com/pizzas.json`)
+            });
     }
 }
-

@@ -9,13 +9,12 @@
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
   }
 
   &__image {
-    width: 260px;
-    margin-bottom: 20px;
+    width: 100%;
   }
 
   &__title {

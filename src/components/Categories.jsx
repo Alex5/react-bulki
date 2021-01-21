@@ -1,25 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 import bulkiLogo from "../assets/img/bulki-logo.svg";
 import PropTypes from "prop-types";
 
-const Categories = React.memo(({activeCategory, items, onClickCategory}) => {
+const Categories = React.memo(({activeCategory, items, onClickCategory, showLogo}) => {
 
-    const [showLogo, setShowLogo] = useState(false)
-
-    const changeShowLogo = () => {
-        if (window.scrollY > 125) {
-            setShowLogo(true)
-        } else {
-            setShowLogo(false)
-        }
-    }
-
-    window.addEventListener("scroll", changeShowLogo)
 
     return (
-        <div className={showLogo ? "categories fixed" : "categories"}>
+        <div className="categories">
             <ul>
-                <div className={showLogo ? "scrollLogo active" : "scrollLogo "}>
+                <div className={showLogo ? "scrollLogo active" : "scrollLogo"}>
                     <img height="100%" src={bulkiLogo} alt="Pizza logo"/>
                 </div>
                 <li className={activeCategory === null ? 'active' : ''} onClick={() => onClickCategory(null)}>Все</li>
