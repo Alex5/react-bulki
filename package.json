@@ -26,11 +26,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "CI= react-scripts build",
-    "test": "react-scripts test",
-    "server": "node server.js",
-    "json-server": "json-server --watch public/db.json --port=3001"
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": [
