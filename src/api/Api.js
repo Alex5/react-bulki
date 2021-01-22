@@ -11,8 +11,6 @@ export const pizzaApi = {
             .get(`pizzas?${
                 category !== null ? `category=${category}` : ''
             }&_sort=${sortBy.type}&_order=${sortBy.order}`)
-            .catch(() => {
-                return axios.get(`https://react-bulki-default-rtdb.firebaseio.com/pizzas.json`)
-            });
+            .catch((err) => {console.log(err)});
     }
 }
