@@ -1,7 +1,6 @@
 @import 'fonts';
 @import 'variables';
 @import 'libs/normalize';
-
 @import 'components/all';
 
 ::-webkit-scrollbar {
@@ -20,6 +19,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 1rem;
+
   }
 
   &__top {

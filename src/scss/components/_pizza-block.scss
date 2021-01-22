@@ -6,6 +6,7 @@
   margin-bottom: 40px;
   padding: 15px 20px 15px 20px;
   transition: ease-in-out 0.3s;
+  @include noselect();
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -85,13 +86,10 @@
   .pizza-block {
     width: 100%;
     padding: 0;
+    @include noselect();
 
     &:hover {
       background: none;
-    }
-
-    &:not(:nth-of-type(4n)) {
-      margin-right: 0;
     }
   }
 }

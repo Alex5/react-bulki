@@ -9,9 +9,10 @@ import {addPizzaToCart} from "../redux/reducers/cart";
 
 const Home = () => {
     const dispatch = useDispatch()
-    const items = useSelector(({pizzasData}) => pizzasData.items)
-    const isLoaded = useSelector(({pizzasData}) => pizzasData.isLoaded)
-    const {category, sortBy} = useSelector(({filtersData}) => filtersData)
+    const items = useSelector(({pizzasData}) => pizzasData.items);
+    const cartItems = useSelector(({cart}) => cart.items);
+    const isLoaded = useSelector(({pizzasData}) => pizzasData.isLoaded);
+    const {category, sortBy} = useSelector(({filtersData}) => filtersData);
 
     React.useEffect(() => {
         dispatch(fetchPizzas(category, sortBy))
@@ -73,7 +74,11 @@ const Home = () => {
                 <div className="content__items">
                     {items && isLoaded
                         ? items.map((item) => (
-                            <PizzaBlock onCLickAddPizza={handleAddPizzaToCart} isLoading={true} key={item.id} {...item}/>
+                            <PizzaBlock
+                                onCLickAddPizza={handleAddPizzaToCart}
+                                addedCount={cartItems[item.id] && cartItems[item.id].length}
+                                key={item.id}
+                                {...item}/>
 
                         )) : Array(10)
                             .fill(0)
