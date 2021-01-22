@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from "react";
 
 export const pizzaApi = {
     getPizzas(sortBy, category) {
@@ -7,7 +6,7 @@ export const pizzaApi = {
             .get(
                 `/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${
                     sortBy.order
-                }`,
+                }`
             )
     }
 }

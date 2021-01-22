@@ -35,4 +35,6 @@ export const fetchPizzas = (sortBy, category) => async (dispatch) => {
     dispatch(setPizzas(response.data));
 }
 
+
+
 export default pizzas;
