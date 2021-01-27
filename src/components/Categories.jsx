@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 const Categories = React.memo(({activeCategory, items, onClickCategory, showLogo}) => {
 
-
     return (
         <div className="categories">
             <ul>

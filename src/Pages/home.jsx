@@ -54,7 +54,7 @@ const Home = () => {
     window.addEventListener("scroll", changeShowLogo)
 
     const handleAddPizzaToCart = (obj) => {
-       dispatch(addPizzaToCart(obj))
+        dispatch(addPizzaToCart(obj))
     }
 
     return (
@@ -67,7 +67,7 @@ const Home = () => {
                     items={categoriesItems}
                 />
                 <SortPopup onClickSortType={onSelectSortType} activeSortType={sortBy.type}
-                           items={sortItems}/>
+                                 items={sortItems}/>
             </div>
             <div className="container">
                 <h2 className="content__title">Вся выпечка</h2>

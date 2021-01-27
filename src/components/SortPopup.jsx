@@ -1,19 +1,16 @@
-import React, {useEffect, useRef, useState} from "react";
-import PizzaBlock from "./PizzaBlock/PizzaBlock";
+import React from "react";
 import PropTypes from "prop-types";
 import Categories from "./Categories";
 
 const SortPopup = React.memo(({items, onClickSortType, activeSortType}) => {
 
-    console.log(activeSortType)
-
-    const [visiblePopup, setVisiblePopup] = useState(false)
+    const [visiblePopup, setVisiblePopup] = React.useState(false)
     const activeLabel = items.find((obj) => obj.type === activeSortType).name;
 
 
     const toggleVisiblePopup = () => setVisiblePopup(!visiblePopup)
 
-    const sortRef = useRef()
+    const sortRef = React.useRef()
 
     const handleOutsideCLick = (e) => {
         if (!e.path.includes(sortRef.current)) {
@@ -21,7 +18,7 @@ const SortPopup = React.memo(({items, onClickSortType, activeSortType}) => {
         }
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
         document.body.addEventListener("click", handleOutsideCLick)
     }, []);
 

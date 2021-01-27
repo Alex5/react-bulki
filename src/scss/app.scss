@@ -17,7 +17,7 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
   &__top {
@@ -28,7 +28,7 @@
     background: white;
     height: 60px;
     z-index: 1;
-    padding: 0 5%;
+    padding: 0 10%;
     width: 100%;
     transition: ease-in-out 0.3s;
   }

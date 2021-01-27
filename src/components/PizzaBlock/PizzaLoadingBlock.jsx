@@ -5,9 +5,9 @@ const PizzaLoadingBlock = () => {
     return (
         <ContentLoader
             speed={2}
-            width={300}
+            width={392}
             height={534}
-            viewBox="0 0 300 534"
+            viewBox="0 0 392 534"
             backgroundColor="#f3f3f3"
             foregroundColor="#ecebeb"
         >
