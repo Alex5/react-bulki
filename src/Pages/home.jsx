@@ -76,7 +76,7 @@ const Home = () => {
                         ? items.map((item) => (
                             <PizzaBlock
                                 onCLickAddPizza={handleAddPizzaToCart}
-                                addedCount={cartItems[item.id] && cartItems[item.id].length}
+                                addedCount={cartItems[item.id] && cartItems[item.id].items.length}
                                 key={item.id}
                                 {...item}/>
 
