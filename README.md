@@ -1,6 +1,4 @@
-Интернет-магазин по заказу пиццы - React Pizza
-
-https://react-bulki-deploy.herokuapp.com/
+Интернет-магазин
 
 Stack:
 
@@ -11,3 +9,5 @@ Redux thunk
 json-server
 Axios
 classnames
+
+Источник: Archakov Blog
